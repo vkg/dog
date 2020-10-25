@@ -9,18 +9,17 @@ import (
 )
 
 func (b *Bot) Help(channelID string) {
-	b.sendMessage(channelID, fmt.Sprintf(`@vkgdog subcommand
-サブコマンド
-  add emoji <文字>	絵文字を追加するワン(文字の長さは16文字までだワン) (改行したいところに"//"を入れるワン 例: お前が//テック//リードだワン)
-  who				自己紹介するワン
-  天気				天気をランダムで教えるワン
-  friend|犬			友達の犬をお届けするワン
-  oncall-vkgtaro	vkgtaroを呼ぶワン
-  dice|サイコロ		サイコロを振るワン
-  help				helpを表示するワン
-  wiki				wikipediaからランダムでなんか出すワン
-  vkgtaro			vkgtaro
-`))
+	b.sendMessage(channelID, "@vkgdog subcommand\n"+
+		"サブコマンド\n"+
+		"  add emoji <文字> -alias <name>\t絵文字を追加するワン(文字の長さは16文字までだワン)\n"+
+		"  who\t自己紹介するワン\n"+
+		"  天気\t天気をランダムで教えるワン\n"+
+		"  friend|犬\t友達の犬をお届けするワン\n"+
+		"  oncall-vkgtaro\tvkgtaroを呼ぶワン\n"+
+		"  dice|サイコロ\tサイコロを振るワン\n"+
+		"  help\thelpを表示するワン\n"+
+		"  wiki\twikipediaからランダムでなんか出すワン\n"+
+		"  vkgtaro\tvkgtaroをお届けするワン\n")
 }
 
 func (b *Bot) Dice(channelID string) {
