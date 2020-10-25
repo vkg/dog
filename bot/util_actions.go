@@ -19,7 +19,8 @@ func (b *Bot) Help(channelID string) {
 		"  dice|サイコロ\tサイコロを振るワン\n"+
 		"  help\thelpを表示するワン\n"+
 		"  wiki\twikipediaからランダムでなんか出すワン\n"+
-		"  vkgtaro\tvkgtaroをお届けするワン\n")
+		"  vkgtaro\tvkgtaroをお届けするワン\n"+
+		"  vkgfake\tvkgtaroの偽物をお届けするワン\n")
 }
 
 func (b *Bot) Dice(channelID string) {
@@ -53,6 +54,11 @@ func (b *Bot) Vkgtaro(channelID string) {
 		prefix = "大当たり どうぞ"
 	}
 	b.sendMessage(channelID, fmt.Sprintf(`%s %s`, prefix, vkgPhotos[randomVal]))
+}
+
+func (b *Bot) Vkgfake(channelID string) {
+	image := "https://user-images.githubusercontent.com/16610193/97103910-ebdda400-16f2-11eb-91d5-4749ef23b151.png"
+	b.sendMessage(channelID, fmt.Sprintf(`偽物だワン %s`, image))
 }
 
 func (b *Bot) Weather(channelID string) {
