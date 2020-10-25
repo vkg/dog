@@ -25,7 +25,8 @@ func (b *Bot) isMsgToBot(s string) bool {
 }
 
 func (b *Bot) suppressMention(s string) string {
-	return strings.TrimLeft(s, fmt.Sprintf("<@!%s> ", b.clientID))
+	s = strings.TrimPrefix(s, fmt.Sprintf("<@!%s> ", b.clientID))
+	return strings.TrimPrefix(s, fmt.Sprintf("<@%s> ", b.clientID))
 }
 
 func (b *Bot) isCmd(content, cmd string) bool {
