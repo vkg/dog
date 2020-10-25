@@ -44,6 +44,9 @@ func (b *Bot) OnMessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) 
 	case b.isCmd(content, "vkgfake"):
 		b.Vkgfake(m.ChannelID)
 
+	case b.isCmd(content, "training"):
+		b.Training(m.ChannelID)
+
 	default:
 		b.sendMessage(m.ChannelID, "ワン")
 	}

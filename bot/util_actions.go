@@ -20,7 +20,8 @@ func (b *Bot) Help(channelID string) {
 		"  help\thelpを表示するワン\n"+
 		"  wiki\twikipediaからランダムでなんか出すワン\n"+
 		"  vkgtaro\tvkgtaroをお届けするワン\n"+
-		"  vkgfake\tvkgtaroの偽物をお届けするワン\n")
+		"  vkgfake\tvkgtaroの偽物をお届けするワン\n"+
+		"  training\tぼくのトレーニング場をご案内するワン\n")
 }
 
 func (b *Bot) Dice(channelID string) {
@@ -59,6 +60,11 @@ func (b *Bot) Vkgtaro(channelID string) {
 func (b *Bot) Vkgfake(channelID string) {
 	image := "https://user-images.githubusercontent.com/16610193/97103910-ebdda400-16f2-11eb-91d5-4749ef23b151.png"
 	b.sendMessage(channelID, fmt.Sprintf(`偽物だワン %s`, image))
+}
+
+func (b *Bot) Training(channelID string) {
+	url := "https://www.google.com/maps/place/VKG+Dog+Training+Centre/@11.7234491,76.3007049,15z/data=!4m5!3m4!1s0x0:0x821414fa47a0ac8b!8m2!3d11.7234491!4d76.3007049"
+	b.sendMessage(channelID, fmt.Sprintf(`vkg dog training centreで遊びたいワン %s`, url))
 }
 
 func (b *Bot) Weather(channelID string) {
